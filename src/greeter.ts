@@ -1,9 +1,14 @@
 window.onload = function afterLoad() {
-    function greeter(person: string) {
-        return 'Hello ' + person;
+    interface Person {
+        firstName: string;
+        lastName: string;
+    }
+
+    function greeter(person: Person) {
+        return 'Hello ' + person.firstName +  ' ' + person.lastName;
     }
     
-    var user = 23;
+    var user = { firstName: 'John', lastName: 'Doe' };
     
     document.body.innerHTML = greeter(user);
 }
